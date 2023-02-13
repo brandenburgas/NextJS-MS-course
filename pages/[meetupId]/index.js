@@ -35,7 +35,7 @@ export const getStaticPaths = async () => {
 
   // describes all the variants for which this page could be generated
   return {
-    fallback: false, // tells if paths have ALL available, or just only some of the available values (Falls - ALL VALUES, if user enters a value that is not supported, he would get a 404 error, if TRUE, then nextJS would try to generate a version for that page)
+    fallback: "blocking", // tells if paths have ALL available, or just only some of the available values (Falls - ALL VALUES, if user enters a value that is not supported, he would get a 404 error, if TRUE, then nextJS would try to generate a version for that page)
     paths: meetups.map((meetup) => ({
       params: {
         meetupId: meetup._id.toString(),
